@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li><a class="" href="{% url 'Login_app:index' %}">Home</a></li>
+      {% if user.is_authenticated %}
+      <li><a class="" href="{% url 'Login_app:register' %}">Register</a></li>
+      {% else %}
+      <li><a class="" href="{% url 'Login_app:login' %}">Login</a></li>
+      <li><a class="" href="{% url 'Login_app:logout' %}">Logout</a></li>
+      {% endif %}
+
+    </ul>
+
+
+
+
+    <div class="container">
+      {% block body_block %}
+      {% endblock %}
+
+    </div>
+
+  </body>
+</html>
